@@ -22,9 +22,11 @@ Black =  reaper.ColorToNative(0,0,0)|0x1000000
 --------------------------
 
 color = lightblue      --<<<<<<--Marker Color
-characterName = ""
+name = "character_ref/$project/$region" --<<<<<<--The name you want for the file if you want to customize.
 
+---Don't change anything under this line.---
 --------------------------
+characterName = ""
 
 function msg(m)                         
 	reaper.ShowConsoleMsg(tostring(m) .. '\n')
@@ -44,7 +46,7 @@ end
 function renderSettings()
 	prev_name = ''
 	retval, prev_name = reaper.GetSetProjectInfo_String(0, 'RENDER_PATTERN', prev_name, false)
-  name = "character_ref/$project/$region"
+
 	reaper.GetSetProjectInfo_String(0, 'RENDER_PATTERN', name, true)
 	reaper.GetSetProjectInfo(0, 'RENDER_SETTINGS', 8, true)
 	reaper.GetSetProjectInfo(0, 'RENDER_BOUNDSFLAG', 3, true)  
